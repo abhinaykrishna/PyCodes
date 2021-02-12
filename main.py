@@ -1,63 +1,46 @@
-# class Classroom:
-#   classroom_list = ["a","b","c"]
+class Customer:
+  def __init__(self,name,age,phone_no,address):
+    self.name = name
+    self.age = age
+    self.phone_no = phone_no
+    self.address = address 
 
-#   @staticmethod
-#   def search_classroom(classroom):
-#     if classroom in  Classroom.classroom_list:
-#       return "Found"
-#     else:
-#       return -1
+  def view_details(self):
+    print(self.name,self.age,self.phone_no)
+    print(self.address.get_door_no(),self.address.get_street(),self.address.get_pincode())
 
-# print(Classroom.search_classroom("c"))
+  def update_details(self,add):
+    self.address = add
 
+class Address:
+  def __init__(self,door_no,street,pincode):
+    self.__door_no = door_no
+    self.__street = street
+    self.__pincode = pincode
+  
+  def update_address(self):
+    pass
 
-# class Ticket:
-#   counter = 0
+  def get_door_no(self):
+    return self.__door_no
+  def get_street(self):
+    return self.__street
+  def get_pincode(self):
+    return self.__pincode
+  def set_door_no(self, value):
+    self.__door_no = value
+  def set_street(self, value):
+    self.__street = value
+  def set_pincode(self, value):
+    self.__pincode = value
 
-#   def __init__(self,passenger_name,source,destination):
-#     self.passenger_name = passenger_name
-#     self.ticket_id = None
-#     self.source = source
-#     self.destination = destination
+add1=Address(123, "5th Lane", 56001)
+add2=Address(567, "6th Lane", 82006)
 
-#   def validate_source_destination(self):
-#     if self.source == "Delhi":
-#       if self.destination == "Mumbai" or self.destination == "Chennai" or self.destination == "Pune" or self.destination == "Kolkata":
-#         return True
-#       else:
-#         return False
-#     else:
-#       return False
+cus1=Customer("Jack", 24, 1234, add1)
 
-#   @staticmethod
-#   def update_counter():
-#     Ticket.counter+=1
-#     return Ticket.counter
-      
-#   def generate_ticket(self):
-#     if self.validate_source_destination():
-#       if Ticket.counter <= 9:
-#         self.ticket_id = self.source[0]+self.destination[0]+"0"+str(Ticket.update_counter())
-#       else:
-#         self.ticket_id = self.source[0]+self.destination[0]+str(Ticket.update_counter())
-#     else:
-#       self.ticket_id = None
+cus1.view_details()
 
-#   def get_ticket_id(self):
-#     return self.ticket_id
+cus1.update_details(add2)
 
-#   def get_passenger_name(self):
-#     return self.passenger_name
-
-#   def get_source(self):
-#     return self.source
-
-#   def get_destination(self):
-#     return self.destination
-
-# t1 = Ticket("Abhinay","Delhi","Mumbai")
-
-# t1.generate_ticket()
-
-# print(t1.get_ticket_id())
-
+cus1.view_details()

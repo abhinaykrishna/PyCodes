@@ -28,7 +28,7 @@ convert_roman("MCDXLIV")
 import string
 source = string.ascii_lowercase
 
-def s_func(str1,str2):
+def is_consective(str1,str2):
   if source.index(str2) - source.index(str1) == 1:
     return True
   else:
@@ -40,7 +40,7 @@ def count_consecutive(str):
   convert_lower = str.lower()
   my_list = convert_lower.split(" ")
   for i in my_list[:2]:
-      if s_func(i[0],i[1]):
+      if is_consective(i[0],i[1]):
         count+=1
         result.append(i)
   
