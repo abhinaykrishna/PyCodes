@@ -65,13 +65,13 @@ def CRUD(value):
     print(str(cur.rowcount)+" Row Inserted")
   elif value == 2:
     print("CRUD - Update Marks")
-    record = int(input("Enter the record to be updated : "))
+    record = int(input("Enter the SID to be updated : "))
     user_marks = int(input("Enter the Marks to Update : "))
     cur.execute("UPDATE STUDENT SET MARKS=? WHERE SID=?",(user_marks,record))
     print(str(cur.rowcount)+" Row Updated Successfully")
   elif value == 3:
     print("CRUD - Delete")
-    record = int(input("Enter the record to be deleted : "))
+    record = int(input("Enter the SID to be deleted : "))
     cur.execute("DELETE FROM STUDENT WHERE SID="+str(record))
     print("Deleted {} record, rows effected : {}".format(record,cur.rowcount))
   elif value == 4:
