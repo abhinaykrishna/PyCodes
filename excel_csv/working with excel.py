@@ -5,6 +5,7 @@ filepath = r'Employees.xlsx'
 wb = xl.load_workbook(filepath)
 # Can also direcly load it --> wb = xl.load_workbook(r'Employees.xlsx')
 print('Sheet names:', wb.sheetnames)
+print('Sheet names alternative', wb.get_sheet_names())
 
 
 
